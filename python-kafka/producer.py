@@ -13,7 +13,7 @@ class Producer:
         )
         self.topicName = topicName
 
-    def produce_client(self, filePath):
+    def produce_player(self, filePath):
         with open(filePath, "r") as file:
             reader = csv.reader(file)
             headings = next(reader)
@@ -38,4 +38,4 @@ if __name__ == '__main__':
     topicName = "right"
     producer = Producer(brokers, topicName)
     filePath = "./SFG_batting.csv"
-    producer.produce_client(filePath)
+    producer.produce_player(filePath)
