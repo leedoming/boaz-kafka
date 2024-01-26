@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from kafka import KafkaProducer
 import json
 import time
@@ -14,7 +12,7 @@ class Producer:
         # 각 인원의 자기소개를 Kafka 토픽으로 전송
         self.producer.send(self.topicName, json.dumps(message).encode("utf-8"))
         print(message)
-        time.sleep(1)
+        time.sleep(0.5)
 
     def done(self):
         # 데이터를 모두 보낸 후 종료 신호 보내기
@@ -36,7 +34,7 @@ if __name__ == '__main__':
 
     introductions = [
         {"name": "엔지", "introduction": "보아즈 데이터 엔지니어링"},
-        {"name": "이수민", "introduction": "노는 게 제일 좋아 친구들 모여라 언제나 즐거워~🥰 저는 코노 매일 가고 오늘도 갑니당 하핫 mbti는 EEESSTTTPPPP"},
+        {"name": "이수민", "introduction": "노는 게 제일 좋아 친구들 모여라 언제나 즐거워~🥰"},
         {"name": "황혜정", "introduction": "최강 엔지 므쨍이 대표님"},
         {"name": "김주연", "introduction": "최강 분석 므쨍이 대표님"},
         {"name": "권준혁", "introduction": "솔직히 못하지만 저 그냥 노래 부르는 거 좋아해요. 그래서 1년 동안 합창단도 했어요. \n거기서 알았죠, 저는 음감이 딸린다는 것을 ㅋㅋ 다음에 코노 같이 가실 분들 같이 가요.\n저는 참고로 발라드 같은 거 불러요. 저 그리고 MBTI는 ESFP에요!"},
@@ -50,7 +48,7 @@ if __name__ == '__main__':
         {"name": "최지혁", "introduction": "저의 MBTI는 ESFP 입니다! 전 21사단 신교대 조교 출신입니다!\n 음악을 무척 좋아합니다! 게임을 좋아합니다!"},
         {"name": "한상진", "introduction": "축구 보는 거, 하는 거 둘 다 좋아합니다! BOAZ 소모임으로 축구 소모임도 있던데 나중에 공 찰 기회가 있으면 좋겠습니다!! (잘하진 못하는데 열심히는 합니다 ㅎㅎ...)"},
         {"name": "김한수", "introduction": "최근에 인싸같다는 말을 가끔 듣는데 MBTI는 INFJ입니다 ㅠㅠ \n최근 2주 동안에 스키장을 3번 정도 다녀왔어요!\n최근에 반오십이 되어서 무의식적으로 큰일났다라는 생각이 덜컥 들었어요"},
-        {"name": "DONE", "introduction": "끝"}
+        {"name": "DONE", "introduction": "실습 종료"}
     ]
 
     for person in introductions:
